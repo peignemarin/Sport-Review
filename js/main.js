@@ -1,40 +1,8 @@
 // Sport Review — charge data/activities.json et construit la page.
 
-const SPORTS = {
-  run:  { label: "Course",   icon: "🏃", color: "var(--run)" },
-  bike: { label: "Vélo",     icon: "🚴", color: "var(--bike)" },
-  swim: { label: "Natation", icon: "🏊", color: "var(--swim)" },
-  hike: { label: "Rando",    icon: "🥾", color: "var(--hike)" },
-};
+// Les helpers (SPORTS, fmtNumber, fmtDuration, fmtPace, fmtDate, el) sont dans js/format.js
 
 const MONTHS = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."];
-
-const fmtNumber = (n, digits = 0) =>
-  n.toLocaleString("fr-FR", { minimumFractionDigits: digits, maximumFractionDigits: digits });
-
-function fmtDuration(totalSeconds) {
-  const h = Math.floor(totalSeconds / 3600);
-  const m = Math.floor((totalSeconds % 3600) / 60);
-  const s = Math.round(totalSeconds % 60);
-  const pad = (x) => String(x).padStart(2, "0");
-  return h > 0 ? `${h}h${pad(m)}` : `${m}:${pad(s)}`;
-}
-
-function fmtPace(secondsPerKm) {
-  const m = Math.floor(secondsPerKm / 60);
-  const s = Math.round(secondsPerKm % 60);
-  return `${m}:${String(s).padStart(2, "0")} /km`;
-}
-
-const fmtDate = (iso) =>
-  new Date(iso).toLocaleDateString("fr-FR", { weekday: "short", day: "numeric", month: "long", year: "numeric" });
-
-function el(tag, attrs = {}, html = "") {
-  const node = document.createElement(tag);
-  Object.entries(attrs).forEach(([k, v]) => node.setAttribute(k, v));
-  node.innerHTML = html;
-  return node;
-}
 
 function statCard(label, value, unit, meta = "") {
   return el("div", { class: "card" }, `

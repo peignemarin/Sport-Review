@@ -8,19 +8,38 @@ Site 100 % statique (HTML / CSS / JavaScript, sans dépendance) : il peut être 
 
 ```
 Sport Review/
-├── index.html            # Page principale
+├── index.html            # Page 1 — Suivi (board)
+├── import.html           # Page 2 — Import des activités Garmin
+├── server.py             # Serveur local : sert le site + enregistre les imports
 ├── css/style.css         # Styles (thème clair/sombre automatique)
-├── js/main.js            # Chargement des données et affichage
-├── data/activities.json  # Données affichées (exemple pour l'instant)
-└── data/raw/             # Exports Garmin bruts — ignorés par Git, jamais publiés
+├── js/format.js          # Fonctions de formatage partagées
+├── js/main.js            # Page Suivi
+├── js/import.js          # Page Import
+├── data/activities.json  # Données d'exemple de la page Suivi
+├── data/imports.json     # Imports enregistrés (créé au premier import, publié)
+└── data/raw/             # Fichiers .zip importés — ignorés par Git, jamais publiés
 ```
 
 ## Lancer le site en local
 
-Le site charge `data/activities.json`, il faut donc l'ouvrir via un petit serveur (pas en double-cliquant sur `index.html`) :
+Dans VS Code, ouvre le terminal (**Terminal › New Terminal**) et tape :
 
-- **VS Code** : installe l'extension *Live Server*, puis clic droit sur `index.html` → *Open with Live Server*.
-- **Terminal** : `python3 -m http.server 8000` puis ouvre http://localhost:8000
+```
+python3 server.py
+```
+
+Puis ouvre http://localhost:8000 dans ton navigateur. `Ctrl+C` dans le terminal pour arrêter.
+
+## Importer une activité
+
+1. Dans Garmin Connect, ouvre l'activité › ⚙︎ › **Exporter l'original** → tu obtiens un `.zip`.
+2. Sur http://localhost:8000/import.html, dépose le `.zip`, saisis le **nom officiel** et le **temps officiel** (`h:mm:ss`), clique **Importer**.
+3. Le site lit le fichier `.fit` contenu dans le zip (date, sport, distance, durée, FC, dénivelé…) et enregistre :
+   - le zip original dans `data/raw/imports/` (reste sur ton Mac) ;
+   - le résumé chiffré dans `data/imports.json`.
+4. Pour publier : dans VS Code, **Source Control › Commit › Sync Changes**.
+
+L'import ne fonctionne qu'avec le serveur local : sur GitHub Pages, la page Import affiche un message d'avertissement.
 
 ## Format des données
 
@@ -36,6 +55,6 @@ Le dépôt est public. Ne publie que des données agrégées : pas de traces GPS
 
 ## Prochaines étapes
 
-- [ ] Importer les vraies données Garmin (export CSV / Garmin Connect)
-- [ ] Script de conversion export Garmin → `activities.json`
+- [x] Page Import (zip Garmin + nom et temps officiels)
+- [ ] Brancher la page Suivi sur `data/imports.json`
 - [ ] Pages détaillées par sport, parcours, courses

@@ -123,3 +123,71 @@ h2 { font-size: 1.25rem; margin: 0 0 16px; }
 }
 
 .footer { color: var(--muted); font-size: .85rem; padding-bottom: 40px; border-top: 1px solid var(--border); padding-top: 20px; }
+
+/* ---------- Navigation ---------- */
+.topnav { background: #16181d; border-bottom: 1px solid #2b2f38; position: sticky; top: 0; z-index: 10; }
+.topnav-inner { display: flex; justify-content: space-between; align-items: center; height: 56px; }
+.brand { color: #fff; font-weight: 700; text-decoration: none; letter-spacing: .02em; }
+.topnav-links { display: flex; gap: 4px; }
+.topnav-links a { color: #c8cdd6; text-decoration: none; padding: 6px 14px; border-radius: 999px; font-size: .9rem; }
+.topnav-links a:hover { color: #fff; background: #2b2f38; }
+.topnav-links a[aria-current="page"] { color: #16181d; background: #fff; font-weight: 600; }
+.hero--compact { padding: 40px 0 32px; }
+
+/* ---------- Formulaire d'import ---------- */
+.form { display: grid; gap: 18px; padding: 22px; }
+.dropzone {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
+  text-align: center; padding: 34px 20px; cursor: pointer;
+  border: 2px dashed var(--border); border-radius: var(--radius); color: var(--muted);
+  transition: border-color .15s, background .15s;
+}
+.dropzone input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.dropzone strong { color: var(--text); }
+.dropzone-icon { font-size: 1.8rem; color: var(--accent); }
+.dropzone:hover, .dropzone.is-dragging { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 6%, transparent); }
+.dropzone.has-file { border-style: solid; border-color: var(--accent); }
+.dropzone:focus-within { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.form-row { display: grid; grid-template-columns: 1fr 200px; gap: 16px; }
+@media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+.field { display: grid; gap: 6px; align-content: start; min-width: 0; }
+.field label { font-weight: 600; font-size: .9rem; }
+.field input {
+  font: inherit; padding: 10px 12px; border-radius: 10px; width: 100%;
+  border: 1px solid var(--border); background: var(--bg); color: var(--text);
+}
+.field input:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent; }
+.hint { margin: 0; color: var(--muted); font-size: .78rem; }
+.form-error { margin: 0; color: #d64545; font-size: .9rem; min-height: 1.2em; }
+.form-error:empty { display: none; }
+
+.btn {
+  justify-self: start; font: inherit; font-weight: 600; cursor: pointer;
+  background: var(--accent); color: #fff; border: 0; border-radius: 10px; padding: 11px 22px;
+}
+.btn:hover { filter: brightness(1.05); }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+.btn-link { font: inherit; font-size: .85rem; background: none; border: 0; color: var(--muted); cursor: pointer; padding: 4px 8px; border-radius: 6px; }
+.btn-link:hover { color: #d64545; }
+.btn-link.confirm { color: #fff; background: #d64545; }
+
+/* ---------- Messages ---------- */
+.notice { border-radius: var(--radius); padding: 14px 18px; margin: 16px 0; border: 1px solid; line-height: 1.6; }
+.notice--warn { background: color-mix(in srgb, #f0a500 12%, var(--surface)); border-color: color-mix(in srgb, #f0a500 45%, transparent); }
+.notice--ok { background: color-mix(in srgb, #17a398 12%, var(--surface)); border-color: color-mix(in srgb, #17a398 45%, transparent); }
+.notice code, kbd { background: var(--bg); border: 1px solid var(--border); border-radius: 5px; padding: 1px 6px; font-size: .85em; }
+.empty { color: var(--muted); }
+
+/* ---------- Tableau des imports ---------- */
+.table-wrap { padding: 0; overflow-x: auto; }
+.table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+.table th:first-child, .table td:first-child { padding-left: 16px; }
+.table th:last-child, .table td:last-child { padding-right: 12px; }
+.table th { text-align: left; font-weight: 600; color: var(--muted); font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; }
+.table th, .table td { padding: 12px 10px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+.table tbody tr:last-child td { border-bottom: 0; }
+.table .num { text-align: right; font-variant-numeric: tabular-nums; }
+.table .muted { color: var(--muted); }
+.table .wrap { white-space: normal; min-width: 160px; }
+.table .actions { text-align: right; width: 1%; }

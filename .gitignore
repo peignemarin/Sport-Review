@@ -9,3 +9,7 @@ data/raw/
 Thumbs.db
 node_modules/
 .env
+
+# Fichiers temporaires du serveur
+*.tmp
+__pycache__/

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sport Review — Importer une activité</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="topnav">
+    <div class="container topnav-inner">
+      <a class="brand" href="index.html">Sport Review</a>
+      <div class="topnav-links">
+        <a href="index.html">Suivi</a>
+        <a href="import.html" aria-current="page">Import</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero hero--compact">
+    <div class="container">
+      <p class="eyebrow">Import</p>
+      <h1>Importer une activité</h1>
+      <p class="subtitle">Dépose l'export Garmin (.zip) d'une course, puis renseigne son nom et son temps officiels.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <div id="server-warning" class="notice notice--warn" hidden>
+      <strong>L'import ne fonctionne qu'en local.</strong>
+      Dans VS Code, ouvre le terminal (<kbd>Ctrl</kbd>+<kbd>`</kbd>), tape <code>python3 server.py</code>
+      puis ouvre <a href="http://localhost:8000/import.html">http://localhost:8000/import.html</a>.
+    </div>
+
+    <section aria-labelledby="form-title">
+      <h2 id="form-title">Nouvel import</h2>
+      <form id="import-form" class="card form" novalidate>
+        <label id="dropzone" class="dropzone" for="file">
+          <input id="file" name="file" type="file" accept=".zip,.fit" />
+          <span class="dropzone-icon" aria-hidden="true">⇪</span>
+          <span id="dropzone-text"><strong>Glisse ton fichier .zip ici</strong><br />ou clique pour le choisir</span>
+        </label>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="official-name">Nom officiel</label>
+            <input id="official-name" name="name" type="text" placeholder="Semi-marathon de Paris 2026" autocomplete="off" required />
+          </div>
+          <div class="field field--small">
+            <label for="official-time">Temps officiel</label>
+            <input id="official-time" name="time" type="text" placeholder="1:39:02" inputmode="numeric" required />
+            <p class="hint">h:mm:ss ou mm:ss</p>
+          </div>
+        </div>
+
+        <p id="form-error" class="form-error" role="alert"></p>
+        <button id="submit" type="submit" class="btn">Importer</button>
+      </form>
+      <div id="result"></div>
+    </section>
+
+    <section aria-labelledby="list-title">
+      <h2 id="list-title">Imports enregistrés</h2>
+      <div id="imports"></div>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <p>Les fichiers .zip restent sur ton ordinateur (data/raw/, non publié). Seuls les chiffres sont enregistrés dans data/imports.json.</p>
+  </footer>
+
+  <script src="js/format.js"></script>
+  <script src="js/import.js"></script>
+</body>
+</html>
