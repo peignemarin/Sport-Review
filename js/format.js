@@ -1,17 +1,17 @@
-// Fonctions de formatage partagées entre les pages.
+// Formatting helpers shared by all pages.
 
 const SPORTS = {
-  run:  { label: "Course",   icon: "🏃", color: "var(--run)" },
-  bike: { label: "Vélo",     icon: "🚴", color: "var(--bike)" },
-  swim: { label: "Natation", icon: "🏊", color: "var(--swim)" },
-  hike: { label: "Rando",    icon: "🥾", color: "var(--hike)" },
-  walk: { label: "Marche",   icon: "🚶", color: "var(--hike)" },
-  gym:  { label: "Muscu",    icon: "🏋️", color: "var(--muted)" },
-  other:{ label: "Autre",    icon: "•",  color: "var(--muted)" },
+  run:  { label: "Run",   icon: "🏃", color: "var(--blue)" },
+  bike: { label: "Bike",     icon: "🚴", color: "var(--blue)" },
+  swim: { label: "Swim", icon: "🏊", color: "var(--blue)" },
+  hike: { label: "Hike",    icon: "🥾", color: "var(--blue)" },
+  walk: { label: "Walk",   icon: "🚶", color: "var(--blue)" },
+  gym:  { label: "Gym",    icon: "🏋️", color: "var(--blue)" },
+  other:{ label: "Other",    icon: "•",  color: "var(--blue)" },
 };
 
 const fmtNumber = (n, digits = 0) =>
-  n.toLocaleString("fr-FR", { minimumFractionDigits: digits, maximumFractionDigits: digits });
+  n.toLocaleString("en-GB", { minimumFractionDigits: digits, maximumFractionDigits: digits });
 
 function fmtDuration(totalSeconds) {
   const h = Math.floor(totalSeconds / 3600);
@@ -21,7 +21,7 @@ function fmtDuration(totalSeconds) {
   return h > 0 ? `${h}h${pad(m)}` : `${m}:${pad(s)}`;
 }
 
-// Format complet h:mm:ss, utile pour les temps officiels
+// Full h:mm:ss format, used for official times
 function fmtClock(totalSeconds) {
   const h = Math.floor(totalSeconds / 3600);
   const m = Math.floor((totalSeconds % 3600) / 60);
@@ -37,7 +37,7 @@ function fmtPace(secondsPerKm) {
 }
 
 const fmtDate = (iso) =>
-  new Date(iso).toLocaleDateString("fr-FR", { weekday: "short", day: "numeric", month: "long", year: "numeric" });
+  new Date(iso).toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "long", year: "numeric" });
 
 function escapeHtml(text) {
   return String(text).replace(/[&<>"']/g, (c) =>

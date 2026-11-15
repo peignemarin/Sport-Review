@@ -1,0 +1,296 @@
+{
+  "courses": [
+    {
+      "id": "25006068270",
+      "file": "data/garmin/25006068270.zip",
+      "added_at": "2026-11-15",
+      "official_name": "Marathon de Bordeaux AG2R La Mondiale",
+      "official_time": "2:58:23",
+      "activity": {
+        "date": "2026-11-08T07:00:31+00:00",
+        "sport": "run",
+        "distance_km": 42.454,
+        "duration_s": 10706,
+        "avg_hr": 156,
+        "max_hr": 174,
+        "elevation_m": 138
+      },
+      "category": "Marathon"
+    },
+    {
+      "id": "18813885701",
+      "file": "data/garmin/18813885701.zip",
+      "added_at": "2026-11-15",
+      "official_name": "Schneider Electric Marathon de Paris",
+      "official_time": "3:33:31",
+      "activity": {
+        "date": "2025-04-13T06:09:17+00:00",
+        "sport": "run",
+        "distance_km": 42.575,
+        "duration_s": 12813,
+        "avg_hr": 149,
+        "max_hr": 174,
+        "elevation_m": 168
+      },
+      "category": "Marathon"
+    },
+    {
+      "id": "15018338404",
+      "file": "data/garmin/15018338404.zip",
+      "added_at": "2026-11-15",
+      "official_name": "Abalone Marathon de Nantes",
+      "official_time": "3:18:08",
+      "activity": {
+        "date": "2024-04-21T07:15:52+00:00",
+        "sport": "run",
+        "distance_km": 42.805,
+        "duration_s": 11894,
+        "avg_hr": 159,
+        "max_hr": 171,
+        "elevation_m": 242
+      },
+      "category": "Marathon"
+    },
+    {
+      "id": "23874672932",
+      "file": "data/garmin/23874672932.zip",
+      "added_at": "2026-11-15",
+      "official_name": "Etape du tour Femmes",
+      "official_time": "",
+      "activity": {
+        "date": "2026-08-06T06:20:24+00:00",
+        "sport": "bike",
+        "distance_km": 111.088,
+        "duration_s": 19492,
+        "avg_hr": 137,
+        "max_hr": 168,
+        "elevation_m": 2970
+      },
+      "official_distance_km": 111.7,
+      "official_elevation_m": 2950,
+      "cols": [
+        {
+          "cat": "4",
+          "name": "Col de Propiac",
+          "length_km": 2.6,
+          "gradient_pct": 6.4,
+          "km_start": 19.8,
+          "km_end": 22.4
+        },
+        {
+          "cat": "3",
+          "name": "Col de Suzette",
+          "length_km": 3.9,
+          "gradient_pct": 6.4,
+          "km_start": 68.3,
+          "km_end": 72.2
+        },
+        {
+          "cat": "4",
+          "name": "Col de la Chaîne",
+          "length_km": 2.2,
+          "gradient_pct": 4.8,
+          "km_start": 73.4,
+          "km_end": 75.6
+        },
+        {
+          "cat": "4",
+          "name": "Col de la Madeleine",
+          "length_km": 5.1,
+          "gradient_pct": 2.7,
+          "km_start": 78.3,
+          "km_end": 83.4
+        },
+        {
+          "cat": "HC",
+          "name": "Mont Ventoux",
+          "length_km": 15.7,
+          "gradient_pct": 8.8,
+          "km_start": 95.3,
+          "km_end": 111.0
+        }
+      ],
+      "category": "Course"
+    },
+    {
+      "id": "18166430066",
+      "file": "data/garmin/18166430066.zip",
+      "added_at": "2026-11-15",
+      "official_name": "10 km Champs-Élysées-Fulfil",
+      "official_time": "0:37:57",
+      "activity": {
+        "date": "2025-02-02T09:30:13+00:00",
+        "sport": "run",
+        "distance_km": 10.105,
+        "duration_s": 2297,
+        "avg_hr": 169,
+        "max_hr": 179,
+        "elevation_m": 60
+      },
+      "category": "10 km"
+    },
+    {
+      "id": "18479990181",
+      "file": "data/garmin/18479990181.zip",
+      "added_at": "2026-11-15",
+      "official_name": "Harmonie Mutuelle Semi de Paris",
+      "official_time": "1:26:51",
+      "activity": {
+        "date": "2025-03-09T07:07:05+00:00",
+        "sport": "run",
+        "distance_km": 21.226,
+        "duration_s": 5221,
+        "avg_hr": 160,
+        "max_hr": 172,
+        "elevation_m": 98
+      },
+      "category": "Semi-marathon"
+    },
+    {
+      "id": "18952802074",
+      "file": "data/garmin/18952802074.zip",
+      "added_at": "2026-11-15",
+      "official_name": "Les Foulées de l'Éléphant",
+      "official_time": "1:06:31",
+      "activity": {
+        "date": "2025-04-26T19:36:17+00:00",
+        "sport": "run",
+        "distance_km": 10.25,
+        "duration_s": 3995,
+        "avg_hr": 140,
+        "max_hr": 160,
+        "elevation_m": 44
+      },
+      "category": "10 km"
+    },
+    {
+      "id": "19089030878",
+      "file": "data/garmin/19089030878.zip",
+      "added_at": "2026-11-15",
+      "official_name": "10 km du Panthéon",
+      "official_time": "0:39:13",
+      "activity": {
+        "date": "2025-05-11T07:00:40+00:00",
+        "sport": "run",
+        "distance_km": 10.007,
+        "duration_s": 2355,
+        "avg_hr": 168,
+        "max_hr": 182,
+        "elevation_m": 54
+      },
+      "category": "10 km"
+    },
+    {
+      "id": "20240073986",
+      "file": "data/garmin/20240073986.zip",
+      "added_at": "2026-11-15",
+      "official_name": "Le 10 km du Trocadéro",
+      "official_time": "0:39:38",
+      "activity": {
+        "date": "2025-08-31T06:30:37+00:00",
+        "sport": "run",
+        "distance_km": 10.005,
+        "duration_s": 2384,
+        "avg_hr": 168,
+        "max_hr": 176,
+        "elevation_m": 32
+      },
+      "category": "10 km"
+    },
+    {
+      "id": "20599439930",
+      "file": "data/garmin/20599439930.zip",
+      "added_at": "2026-11-15",
+      "official_name": "Run Set & Match",
+      "official_time": "1:06:36",
+      "activity": {
+        "date": "2025-10-05T09:14:12+00:00",
+        "sport": "run",
+        "distance_km": 10.097,
+        "duration_s": 3999,
+        "avg_hr": 133,
+        "max_hr": 156,
+        "elevation_m": 36
+      },
+      "category": "10 km"
+    },
+    {
+      "id": "21191449878",
+      "file": "data/garmin/21191449878.zip",
+      "added_at": "2026-11-15",
+      "official_name": "Saucony 10 km de la Tour Eiffel",
+      "official_time": "0:37:53",
+      "activity": {
+        "date": "2025-12-07T08:03:44+00:00",
+        "sport": "run",
+        "distance_km": 10.093,
+        "duration_s": 2274,
+        "avg_hr": 168,
+        "max_hr": 176,
+        "elevation_m": 22
+      },
+      "category": "10 km"
+    },
+    {
+      "id": "22414650251",
+      "file": "data/garmin/22414650251.zip",
+      "added_at": "2026-11-15",
+      "official_name": "La Grande Course RATP du Grand Paris Saint-Denis",
+      "official_time": "2:14:54",
+      "activity": {
+        "date": "2026-04-05T07:04:35+00:00",
+        "sport": "run",
+        "distance_km": 21.195,
+        "duration_s": 8094,
+        "avg_hr": 127,
+        "max_hr": 153,
+        "elevation_m": 56
+      },
+      "category": "Semi-marathon"
+    },
+    {
+      "id": "24513960193",
+      "file": "data/garmin/24513960193.zip",
+      "added_at": "2026-11-15",
+      "official_name": "Paris-Versailles – La Grande Classique",
+      "official_time": "1:03:12",
+      "activity": {
+        "date": "2026-09-27T08:00:13+00:00",
+        "sport": "run",
+        "distance_km": 16.155,
+        "duration_s": 3793,
+        "avg_hr": 166,
+        "max_hr": 176,
+        "elevation_m": 249
+      },
+      "cols": [
+        {
+          "cat": "4",
+          "name": "Côte des Gardes",
+          "length_km": 2.3,
+          "gradient_pct": 5.7,
+          "km_start": 5.9,
+          "km_end": 8.25
+        }
+      ],
+      "category": "16,2 km"
+    },
+    {
+      "id": "24681919214",
+      "file": "data/garmin/24681919214.zip",
+      "added_at": "2026-11-15",
+      "official_name": "Harmonie Mutuelle 20 km de Paris",
+      "official_time": "1:14:28",
+      "activity": {
+        "date": "2026-10-11T07:00:15+00:00",
+        "sport": "run",
+        "distance_km": 20.023,
+        "duration_s": 4469,
+        "avg_hr": 165,
+        "max_hr": 180,
+        "elevation_m": 114
+      },
+      "category": "20 km"
+    }
+  ]
+}

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sport Review — Mes performances</title>
-  <meta name="description" content="Mes performances sportives : records, volumes et dernières sorties, à partir de mes données Garmin." />
+  <title>Sport Review — Track Record</title>
+  <meta name="description" content="Every race I've run, traced on a map of France." />
+  <link rel="stylesheet" href="css/leaflet.css" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -12,51 +13,38 @@
     <div class="container topnav-inner">
       <a class="brand" href="index.html">Sport Review</a>
       <div class="topnav-links">
-        <a href="index.html" aria-current="page">Suivi</a>
-        <a href="import.html">Import</a>
+        <a href="index.html" aria-current="page">Track Record</a>
+        <a href="courses.html">Races</a>
       </div>
     </div>
   </nav>
 
-  <header class="hero">
-    <div class="container">
-      <p class="eyebrow">Sport Review</p>
-      <h1>Mes performances</h1>
-      <p class="subtitle">Records, volume d'entraînement et dernières sorties — alimenté par mes données Garmin.</p>
-      <p id="updated" class="updated"></p>
-    </div>
-  </header>
+  <main class="container page">
+    <header class="tr-head">
+      <h1 class="page-title">Track Record</h1>
+    </header>
 
-  <main class="container">
-    <section aria-labelledby="totals-title">
-      <h2 id="totals-title">Cette année</h2>
-      <div id="totals" class="stats-grid"></div>
-    </section>
+    <div id="counters" class="counters"></div>
 
-    <section aria-labelledby="records-title">
-      <h2 id="records-title">Records personnels</h2>
-      <div id="records" class="records-grid"></div>
-    </section>
-
-    <section aria-labelledby="volume-title">
-      <h2 id="volume-title">Volume mensuel (km)</h2>
-      <div id="volume-chart" class="chart" role="img" aria-label="Kilomètres parcourus par mois"></div>
-    </section>
-
-    <section aria-labelledby="activities-title">
-      <div class="section-head">
-        <h2 id="activities-title">Dernières activités</h2>
-        <div id="filters" class="filters" role="group" aria-label="Filtrer par sport"></div>
+    <div class="map-panel">
+      <div id="map" class="map" aria-label="Map of France with race tracks"></div>
+      <button id="map-reset" type="button" class="map-reset" hidden>← All of France</button>
+      <div class="map-zoom" role="group" aria-label="Zoom">
+        <button id="zoom-in" type="button" aria-label="Zoom in" title="Zoom in (+)">+</button>
+        <button id="zoom-out" type="button" aria-label="Zoom out" title="Zoom out (−)">−</button>
       </div>
-      <ul id="activities" class="activity-list"></ul>
-    </section>
+      <div id="map-legend" class="map-legend"></div>
+      <div id="map-tip" class="map-tip" role="tooltip" hidden></div>
+    </div>
+
+    <h2 class="list-title">All races <span>most recent first</span></h2>
+    <div id="race-filters" class="race-filters"></div>
+    <ol id="race-list" class="race-list" aria-label="Races"></ol>
   </main>
 
-  <footer class="container footer">
-    <p>Données issues de Garmin Connect · Fait avec ❤︎ par Marin</p>
-  </footer>
-
   <script src="js/format.js"></script>
+  <script src="js/vendor/leaflet.js"></script>
+  <script src="js/basemap.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

@@ -8,53 +8,46 @@ Site 100 % statique (HTML / CSS / JavaScript, sans dépendance) : il peut être 
 
 ```
 Sport Review/
-├── index.html            # Page 1 — Suivi (board)
-├── import.html           # Page 2 — Import des activités Garmin
-├── server.py             # Serveur local : sert le site + enregistre les imports
-├── css/style.css         # Styles (thème clair/sombre automatique)
+├── index.html            # Page Track Record : carte de France + tracés GPS des courses
+├── courses.html          # Page Race settings : nom et temps officiels
+├── Start Sport Review.command  # Double-clic : lance le serveur et ouvre le site
+├── server.py             # Serveur local : sert le site + enregistre les courses
+├── tracks.py             # Lit les .zip Garmin → data/tracks.json (lancé au démarrage du serveur)
+├── css/style.css         # DA : beige, anthracite, bleu électrique
 ├── js/format.js          # Fonctions de formatage partagées
-├── js/main.js            # Page Suivi
-├── js/import.js          # Page Import
-├── data/activities.json  # Données d'exemple de la page Suivi
-├── data/imports.json     # Imports enregistrés (créé au premier import, publié)
-└── data/raw/             # Fichiers .zip importés — ignorés par Git, jamais publiés
+├── js/france.js          # Contour simplifié de la France (Natural Earth)
+├── js/main.js            # Page Track Record
+├── js/courses.js         # Page Race settings
+├── data/garmin/          # Fichiers .zip exportés de Garmin Connect
+├── data/courses.json     # Liste des courses + nom et temps officiels
+└── data/tracks.json      # Tracés GPS simplifiés (généré)
 ```
+
+## Ajouter une course
+
+Dépose le `.zip` exporté de Garmin Connect dans `data/garmin/`, puis lance le serveur :
+la course apparaît automatiquement sur la carte et dans Race settings.
 
 ## Lancer le site en local
 
-Dans VS Code, ouvre le terminal (**Terminal › New Terminal**) et tape :
+**Double-clique sur `Start Sport Review.command`** dans le dossier du projet : le serveur démarre
+dans une fenêtre Terminal et le site s'ouvre dans ton navigateur. Ferme la fenêtre Terminal pour l'arrêter.
 
-```
-python3 server.py
-```
+(Alternative : `python3 server.py` dans le terminal de VS Code, puis http://localhost:8000.)
 
-Puis ouvre http://localhost:8000 dans ton navigateur. `Ctrl+C` dans le terminal pour arrêter.
+## Paramètre des courses
 
-## Importer une activité
-
-1. Dans Garmin Connect, ouvre l'activité › ⚙︎ › **Exporter l'original** → tu obtiens un `.zip`.
-2. Sur http://localhost:8000/import.html, dépose le `.zip`, saisis le **nom officiel** et le **temps officiel** (`h:mm:ss`), clique **Importer**.
-3. Le site lit le fichier `.fit` contenu dans le zip (date, sport, distance, durée, FC, dénivelé…) et enregistre :
-   - le zip original dans `data/raw/imports/` (reste sur ton Mac) ;
-   - le résumé chiffré dans `data/imports.json`.
-4. Pour publier : dans VS Code, **Source Control › Commit › Sync Changes**.
-
-L'import ne fonctionne qu'avec le serveur local : sur GitHub Pages, la page Import affiche un message d'avertissement.
-
-## Format des données
-
-`data/activities.json` contient :
-
-- `updated_at` — date de la dernière mise à jour
-- `records` — liste `{ label, time_s, date, event }`
-- `activities` — liste `{ id, date, sport, name, distance_km, duration_s, elevation_m }`, avec `sport` parmi `run`, `bike`, `swim`, `hike`
+Chaque course de `data/courses.json` a un nom et un temps officiels, modifiables sur
+http://localhost:8000/courses.html (enregistrement automatique en quittant le champ).
+Sur GitHub Pages, la page est en lecture seule.
 
 ## Confidentialité
 
-Le dépôt est public. Ne publie que des données agrégées : pas de traces GPS brutes (elles révèlent ton domicile et tes horaires). Les exports Garmin vont dans `data/raw/`, qui est exclu par `.gitignore`.
+Le dépôt est public : les fichiers de `data/garmin/` et les tracés de `data/tracks.json` sont visibles par tous.
+N'y mets que des courses (parcours publics), pas d'entraînements qui partent de chez toi.
 
 ## Prochaines étapes
 
-- [x] Page Import (zip Garmin + nom et temps officiels)
-- [ ] Brancher la page Suivi sur `data/imports.json`
-- [ ] Pages détaillées par sport, parcours, courses
+- [x] Page Race settings
+- [x] Carte des tracés de courses (Track Record)
+- [ ] Enregistrer les modifications directement depuis le site en ligne
