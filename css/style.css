@@ -1,0 +1,125 @@
+:root {
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --text: #16181d;
+  --muted: #5f6673;
+  --border: #e3e6eb;
+  --accent: #e4572e;
+  --run: #e4572e;
+  --bike: #2e86de;
+  --swim: #17a398;
+  --hike: #8e6c3a;
+  --radius: 14px;
+  --shadow: 0 1px 2px rgba(16, 24, 40, 0.06), 0 1px 3px rgba(16, 24, 40, 0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1115;
+    --surface: #181b21;
+    --text: #eef0f3;
+    --muted: #9aa3b2;
+    --border: #2a2f38;
+    --shadow: none;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.container { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+.hero {
+  background: linear-gradient(135deg, #16181d 0%, #2b2f38 100%);
+  color: #fff;
+  padding: 56px 0 44px;
+  margin-bottom: 32px;
+}
+.eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: .78rem; color: var(--accent); margin: 0 0 8px; font-weight: 700; }
+.hero h1 { font-size: clamp(2rem, 5vw, 3rem); margin: 0 0 8px; }
+.subtitle { color: #c8cdd6; margin: 0; max-width: 560px; }
+.updated { color: #8b93a1; font-size: .85rem; margin: 16px 0 0; }
+
+section { margin-bottom: 40px; }
+h2 { font-size: 1.25rem; margin: 0 0 16px; }
+
+.stats-grid, .records-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px;
+}
+.card .label { color: var(--muted); font-size: .85rem; margin: 0; }
+.card .value { font-size: 1.8rem; font-weight: 700; margin: 4px 0 0; font-variant-numeric: tabular-nums; }
+.card .unit { font-size: 1rem; color: var(--muted); font-weight: 500; margin-left: 4px; }
+.card .meta { color: var(--muted); font-size: .8rem; margin: 6px 0 0; }
+
+.chart {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 16px 12px;
+}
+.chart svg { width: 100%; height: auto; display: block; }
+.chart .bar { fill: var(--accent); }
+.chart .bar:hover { opacity: .8; }
+.chart .axis-label { fill: var(--muted); font-size: 11px; }
+.chart .bar-value { fill: var(--text); font-size: 11px; font-weight: 600; }
+
+.section-head { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; }
+.section-head h2 { margin: 0; }
+.filters { display: flex; gap: 8px; flex-wrap: wrap; }
+.filters button {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font: inherit;
+  font-size: .85rem;
+}
+.filters button[aria-pressed="true"] { background: var(--text); color: var(--bg); border-color: var(--text); }
+
+.activity-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.activity {
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  gap: 14px;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+}
+.activity .icon {
+  width: 44px; height: 44px; border-radius: 12px;
+  display: grid; place-items: center; font-size: 1.3rem;
+  background: color-mix(in srgb, var(--sport-color) 15%, transparent);
+}
+.activity .title { font-weight: 600; margin: 0; }
+.activity .date { color: var(--muted); font-size: .85rem; margin: 0; }
+.activity .numbers { display: flex; gap: 18px; text-align: right; font-variant-numeric: tabular-nums; }
+.activity .numbers span { display: block; color: var(--muted); font-size: .75rem; }
+.activity .numbers strong { font-size: 1rem; }
+
+@media (max-width: 600px) {
+  .activity { grid-template-columns: 44px 1fr; }
+  .activity .numbers { grid-column: 1 / -1; justify-content: space-between; text-align: left; }
+}
+
+.footer { color: var(--muted); font-size: .85rem; padding-bottom: 40px; border-top: 1px solid var(--border); padding-top: 20px; }

@@ -1,0 +1,11 @@
+# Exports Garmin bruts (données perso, traces GPS) — ne jamais publier
+data/raw/
+*.fit
+*.gpx
+*.tcx
+
+# Système / éditeur
+.DS_Store
+Thumbs.db
+node_modules/
+.env

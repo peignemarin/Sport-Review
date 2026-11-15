@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sport Review — Mes performances</title>
+  <meta name="description" content="Mes performances sportives : records, volumes et dernières sorties, à partir de mes données Garmin." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <p class="eyebrow">Sport Review</p>
+      <h1>Mes performances</h1>
+      <p class="subtitle">Records, volume d'entraînement et dernières sorties — alimenté par mes données Garmin.</p>
+      <p id="updated" class="updated"></p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section aria-labelledby="totals-title">
+      <h2 id="totals-title">Cette année</h2>
+      <div id="totals" class="stats-grid"></div>
+    </section>
+
+    <section aria-labelledby="records-title">
+      <h2 id="records-title">Records personnels</h2>
+      <div id="records" class="records-grid"></div>
+    </section>
+
+    <section aria-labelledby="volume-title">
+      <h2 id="volume-title">Volume mensuel (km)</h2>
+      <div id="volume-chart" class="chart" role="img" aria-label="Kilomètres parcourus par mois"></div>
+    </section>
+
+    <section aria-labelledby="activities-title">
+      <div class="section-head">
+        <h2 id="activities-title">Dernières activités</h2>
+        <div id="filters" class="filters" role="group" aria-label="Filtrer par sport"></div>
+      </div>
+      <ul id="activities" class="activity-list"></ul>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <p>Données issues de Garmin Connect · Fait avec ❤︎ par Marin</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
